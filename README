@@ -1,0 +1,74 @@
+BackgroudnImgComparison.m - Given two RGB image matrices (k \times n \times d, with d = 3), returns structural similarity, peak signal to noise ratio and mean squared error of the second image with respect to the first one.
+
+
+
+extract_background_ica.m - Given a data path, trainingSIze, number of images in the folder, how large of patches we want to train on, regularization parameter, and proper training indexes, obtain a background using RICA
+
+
+
+make_time_patch_stack.m - create a cell array. each cell array corresponds to a patch of the iamge. In each cell, there is a numrows x numcols x numchannels x time image array.
+
+
+
+PixelPerfMeas.m - Given a sequence of binary images and a sequence of binary reference frames, computes some performance measures (average loss, recall, precision, true negative rate and F1 measure) for the overall sequence. When using this sequence make sure that the reference stream and the stream returned by the proposed algorithm have the same structure. 
+
+
+
+PreICAImageSegmentation.m - Can be used to divide an image into patches in case image is too large to run RICA on.
+
+
+
+ReportPlotsI.m- File used to create the plots and tables used in the report. When using this code, remember to have the variables from RunTests on the workspace; load the .mat file with the previous simulation results if in a new session.
+
+
+
+RunTests.m - File describing the tests/simulations used for this project. When using this file remember to change the data paths to your local folders with the LASIESTA video sequences.
+
+
+
+scale_to_uint8.m - Rescale an image from a double ranging from (-inf, inf) to uint8 [0,255]
+
+
+
+select_background.m - Given two ICA models and a sample image select the actual background. Need to do this due to false color backgrounds and unpredictability of return of ICA.
+
+
+
+test2.m - A simple test folder that shows the basic functionality of the ICA background extraction and background subtraction
+
+
+
+time_stack_to_ica_data.m - Take a time patch stack from make_time_patch_stack() and transform into a vector which can be passed to matlab's rica algorithm
+
+
+
+VideoStreamBackgroundRemoval.m - Given a video sequence (k \times n \times d \times T matrix, with T the length of the video frame), an algorithm (currently using simple background subtraction or an SSIM based classification task), and an image type (usually RGB), returns binary sequence of matrices with 0 for static pixels and 1 for moving pixels. For the project report we used a SSIM based task, hence when calling the function set algorithm = "structural_sim" and ImgType = "RGB".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
